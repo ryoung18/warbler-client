@@ -1,24 +1,27 @@
-import React from "react";
+import React, { Component } from "react";
+import "./Warbler.css";
 
-const Warbler = () => {
-  return (
-    <div className="warbler-wrapper">
-      <div className="warbler-info">
-        <span>tuck fwitter</span>
-        <span>@tuck fwitter</span>
-        <span>how long ago</span>
+class Warbler extends Component {
+  render() {
+    return (
+      <div className="warbler-wrapper">
+        <div className="warbler-info">
+          <span>{this.props.username}</span>
+          <span>@{this.props.username}</span>
+          <span>1hr</span>
+        </div>
+        <div className="warbler-message">
+          <p>{this.props.message}</p>
+        </div>
+        <div className="warbler-actions">
+          <span>reply</span>
+          <span>rewaable</span>
+          <span>heart</span>
+          <span>dm</span>
+        </div>
       </div>
-      <div className="warbler-message">
-        <p>message</p>
-      </div>
-      <div className="warbler-actions">
-        <span>reply</span>
-        <span>rewaable</span>
-        <span>heart</span>
-        <span>dm</span>
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Warbler;
