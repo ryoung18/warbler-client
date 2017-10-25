@@ -5,6 +5,10 @@ import axios from "axios";
 class WarblerContainer extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      warblers: []
+    };
   }
 
   componentDidMount() {
@@ -33,7 +37,15 @@ class WarblerContainer extends Component {
   }
 
   render() {
-    return <h1>waablr</h1>;
+    let warblers = this.state.warblers.map(w => (
+      <Warbler key={w.id} username={w.username} message={w.message} />
+    ));
+
+    return (
+      <div className="warbler-list">
+        <Warbler />
+      </div>
+    );
   }
 }
 
