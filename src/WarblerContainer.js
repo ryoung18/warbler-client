@@ -14,10 +14,10 @@ class WarblerContainer extends Component {
   componentDidMount() {
     // axios
     //   .post("http://localhost:3005/users", {
-    //     email: "test111@warbler.com",
-    //     username: "test111",
-    //     name: "Test 111",
-    //     password: "warbler"
+    //     email: "hello@hello.com",
+    //     username: "hello",
+    //     name: "hello",
+    //     password: "hello"
     //   })
     //   .then(v => {
     //     console.log(v);
@@ -30,18 +30,43 @@ class WarblerContainer extends Component {
     //       console.log(v);
     //     });
     // }
-    axios.get("http://localhost:3005/users/1").then(v => {
-      let userWarblers = v.data.messages.map(w => {
-        return {
-          username: v.data.username,
-          message: w.message
-        };
+    // axios.get("http://localhost:3005/users/1").then(v => {
+    //   let userWarblers = v.data.messages.map(w => {
+    //     return {
+    //       username: v.data.username,
+    //       message: w.message
+    //     };
+    //   });
+    //   let warblers = [...this.state.warblers, ...userWarblers];
+    //   this.setState({
+    //     warblers
+    //   });
+    // });
+
+    axios
+      .post("http://localhost:3005/users/auth", {
+        username: "hello",
+        password: "hello"
+      })
+      .then(v => {
+        console.log(v);
       });
-      let warblers = [...this.state.warblers, ...userWarblers];
-      this.setState({
-        warblers
-      });
-    });
+
+      // axios
+      //   .post("http://localhost:3005/warblers/9", {
+      //     message: "test5 msg5 "
+      //   })
+      //   .then(v => {
+      //     console.log(v);
+      //   });
+    // }
+    // axios.get("http://localhost:3005/warblers/1/1").then(v => {
+    //   debugger
+    //   console.log(v);
+    // });
+    // axios.get("http://localhost:3005/warblers/1").then(v => {
+    //   console.log(v);
+    // });
   }
 
   render() {
