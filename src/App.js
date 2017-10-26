@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import ProfileContainer from "./ProfileContainer";
+import Home from "./Home";
+import Nav from "./Nav";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <ProfileContainer />
+        <Nav />
+
+        <Home />
       </div>
     );
   }

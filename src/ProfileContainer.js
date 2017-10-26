@@ -8,20 +8,30 @@ class ProfileContainer extends Component {
     super(props);
 
     this.state = {
-      user: {
-        username: "mr waable",
-        warblercount: 2
-      }
+      user: {}
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    axios.get("http://localhost:3005/users/1").then(v => {
+      let user = {
+        ...this.state.user,
+        username: v.data.username,
+        name: v.data.name,
+        warblercount: v.data.messages.length
+      };
+      this.setState({
+        user
+      });
+    });
+  }
 
   render() {
     return (
       <div className="profile-container">
         <Profile
           username={this.state.user.username}
+          name={this.state.user.name}
           warblercount={this.state.user.warblercount}
         />
         <WarblerContainer />

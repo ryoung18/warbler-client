@@ -7,16 +7,7 @@ class WarblerContainer extends Component {
     super(props);
 
     this.state = {
-      warblers: [
-        {
-          username: "mr waable",
-          message: "a message"
-        },
-        {
-          username: "mr waable",
-          message: "another message"
-        }
-      ]
+      warblers: []
     };
   }
 
@@ -39,9 +30,18 @@ class WarblerContainer extends Component {
     //       console.log(v);
     //     });
     // }
-    // axios.get("http://localhost:3005/warblers/1/1").then(v => {
-    //   console.log(v);
-    // });
+    axios.get("http://localhost:3005/users/1").then(v => {
+      let userWarblers = v.data.messages.map(w => {
+        return {
+          username: v.data.username,
+          message: w.message
+        };
+      });
+      let warblers = [...this.state.warblers, ...userWarblers];
+      this.setState({
+        warblers
+      });
+    });
   }
 
   render() {

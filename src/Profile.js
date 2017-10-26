@@ -6,7 +6,7 @@ class Profile extends Component {
     return (
       <div className="profile-wrapper">
         <p>{this.props.username}</p>
-
+        <p>{this.props.name}</p>
         <p>{this.props.warblercount} waables</p>
       </div>
     );
