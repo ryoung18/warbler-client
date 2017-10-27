@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import "./UserForm.css";
 
-class SignUpForm extends Component {
+class LogInForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
       username: "",
-      name: "",
       password: ""
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
   handleChange(e) {
@@ -20,16 +19,14 @@ class SignUpForm extends Component {
     });
   }
 
-  handleSubmit(e) {
+  handleLogin(e) {
     e.preventDefault();
-    let newUser = { ...this.state };
-    this.props.handleSubmit(newUser);
   }
 
   render() {
     return (
       <div className="form-container">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleLogin}>
           <div className="form-field">
             <label>Email</label>
             <input
@@ -51,16 +48,6 @@ class SignUpForm extends Component {
           </div>
 
           <div className="form-field">
-            <label>Name</label>
-            <input
-              type="text"
-              onChange={this.handleChange}
-              name="name"
-              value={this.state.name}
-            />
-          </div>
-
-          <div className="form-field">
             <label>Password</label>
             <input
               type="password"
@@ -69,11 +56,11 @@ class SignUpForm extends Component {
               value={this.state.password}
             />
           </div>
-          <button value="">Sign Up</button>
+          <button value="">Login</button>
         </form>
       </div>
     );
   }
 }
 
-export default SignUpForm;
+export default LogInForm;

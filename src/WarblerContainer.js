@@ -30,18 +30,23 @@ class WarblerContainer extends Component {
     //       console.log(v);
     //     });
     // }
-    axios.get("http://localhost:3005/users/1").then(v => {
-      let userWarblers = v.data.messages.map(w => {
-        return {
-          username: v.data.username,
-          message: w.message
-        };
-      });
-      let warblers = [...this.state.warblers, ...userWarblers];
-      this.setState({
-        warblers
-      });
+
+    axios.get("http://localhost:3005/warblers").then(v => {
+      console.log(v);
     });
+
+    // axios.get("http://localhost:3005/users/1").then(v => {
+    //   let userWarblers = v.data.messages.map(w => {
+    //     return {
+    //       username: v.data.username,
+    //       message: w.message
+    //     };
+    //   });
+    //   let warblers = [...this.state.warblers, ...userWarblers];
+    //   this.setState({
+    //     warblers
+    //   });
+    // });
   }
 
   render() {
