@@ -32,7 +32,12 @@ class WarblerContainer extends Component {
     //       console.log(v);
     //     });
     // }
-    // axios.get("http://localhost:3000/users/1").then(v => {
+
+    axios.get("http://localhost:3005/warblers").then(v => {
+      console.log(v);
+    });
+
+    // axios.get("http://localhost:3005/users/1").then(v => {
     //   let userWarblers = v.data.messages.map(w => {
     //     return {
     //       username: v.data.username,
@@ -65,16 +70,6 @@ class WarblerContainer extends Component {
         //       console.log(v);
         //     });
       });
-
-
-
-    // axios.get("http://localhost:3000/warblers/1/1").then(v => {
-    //   debugger
-    //   console.log(v);
-    // });
-    // axios.get("http://localhost:3000/warblers/1").then(v => {
-    //   console.log(v);
-    // });
   }
 
   render() {
