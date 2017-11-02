@@ -33,9 +33,9 @@ class WarblerContainer extends Component {
     //     });
     // }
 
-    axios.get("http://localhost:3005/warblers").then(v => {
-      console.log(v);
-    });
+    // axios.get("http://localhost:3000/warblers").then(v => {
+    //   console.log(v);
+    // });
 
     // axios.get("http://localhost:3005/users/1").then(v => {
     //   let userWarblers = v.data.messages.map(w => {
