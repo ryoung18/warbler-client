@@ -1,8 +1,71 @@
 .nav-container {
   width: 100%;
-  height: 100px;
-  background-color: black;
   position: fixed;
   top: 0;
   overflow: hidden;
+  justify-content: center;
+  padding-top: 20px;
+  background: lightblue;
+}
+
+.center {
+  max-width: 1030px;
+  /*border: 2px solid black;*/
+  margin: auto;
+  padding-right: 5%;
+}
+
+.nav-top {
+  display: flex;
+}
+
+.nav-half {
+  width: 50%;
+}
+
+.nav-right {
+  text-align: right;
+}
+
+.icon {
+  width: 50px;
+  padding-left: 5%;
+}
+
+.nav-title {
+    /*border: 2px solid green;*/
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding-bottom: 30px;
+    text-shadow: 2px 2px 5px gray;
+}
+
+.nav-cat-btns {
+  background: white;
+  position: relative;
+  bottom: 0;
+  border-bottom: 1px solid lightgray;
+  text-align: center;
+  padding-top: 13px;
+  padding-bottom: 16px;
+}
+
+.nav-cat-btns > .center > a {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-right: 50px;
+  padding-left: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-cat-btns > .center > a:nth-child(n+2) {
+  border-left: 1px solid lightgray;
+}
+
+.nav-cat-btns > .center > a:hover {
+  border-bottom: 3px solid lightblue;
 }

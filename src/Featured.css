@@ -2,11 +2,15 @@
   max-width: 1400px;
   margin: auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  /*flex-wrap: nowrap;*/
 
 
 /*  border: 1px solid blue;
   background: yellow;*/
 }
 
+@media screen and (min-width: 1000px) {
+  .featured {
+    justify-content: center;
+  }
+}
