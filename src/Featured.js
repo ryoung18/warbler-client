@@ -71,15 +71,20 @@ class  Featured extends Component {
 
 
   render () {
-    let layout = [[], [], []];
-
-    this.state.featured.forEach((f,i) => {
-      layout[i % 3].push(
-        <Warbler name={f.warbler_name}  handle={f.warbler_handle} logo={f.logo} img={f.img} message={f.message} time={f.time} key={i} />
+    const [left, middle, right] = this.state.featured.reduce((f,e,i) => {
+        f[i % 3].push(
+        <Warbler
+          name={e.warbler_name}
+          handle={e.warbler_handle}
+          logo={e.logo}
+          img={e.img}
+          message={e.message}
+          time={e.time}
+          key={i} />
         )
-    })
 
-   const [left, middle, right] = layout;
+        return f;
+    }, [[],[],[]])
 
     return (
       <div className="featured">
